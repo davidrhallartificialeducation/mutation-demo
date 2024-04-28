@@ -1,25 +1,42 @@
-import { calculateBMI } from './index';
+import { calculateRisk, PatientData } from './index';
 
-describe('calculateBMI', () => {
+describe('calculateRisk', () => {
 
-    it('should return "Underweight" for a person with weight 50kg and height 1.75m', () => {
-        const result = calculateBMI(50, 1.75);
-        expect(result).toBe('Underweight');
-    });
-
-    it('should return "Normal weight" for a person with weight 70kg and height 1.75m', () => {
-        const result = calculateBMI(70, 1.75);
-        expect(result).toBe('Normal weight');
-    });
-
-    it('should return "Overweight" for a person with weight 90kg and height 1.75m', () => {
-        const result = calculateBMI(90, 1.75);
-        expect(result).toBe('Overweight');
-    });
-
-    it('should return "Obesity" for a person with weight 140kg and height 1.75m', () => {
-        const result = calculateBMI(140, 1.75);
-        expect(result).toBe('Obesity');
+    it('should return "X" for a patient aged X with BMI X', () => {
+        const patientData: PatientData = {
+            age: 99,
+            bmi: 99
+        };
+        const result = calculateRisk(patientData);
+        expect(result).toBe('High');
     });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+// it('should return "High" for a patient aged 60 with BMI 30', () => {
+//     const patientData: PatientData = {
+//         age: 60,
+//         bmi: 30
+//     };
+//     const result = calculateRisk(patientData);
+//     expect(result).toBe('High');
+// });
+//
+// it('should return "Low" for a patient aged 30 with BMI 20', () => {
+//     const patientData: PatientData = {
+//         age: 30,
+//         bmi: 20
+//     };
+//     const result = calculateRisk(patientData);
+//     expect(result).toBe('Low');
+// });
